@@ -45,9 +45,6 @@
 // where the poster released it to public domain
 static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
-
-@implementation NSData (MBBase64)
-
 + (id)dataWithBase64EncodedString:(NSString *)string;
 {
 	if (string == nil)

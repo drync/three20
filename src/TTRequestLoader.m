@@ -25,6 +25,7 @@
 
 // Core
 #import "Three20/NSObjectAdditions.h"
+#import "Three20/NSDataAdditions.h"
 #import "Three20/TTDebug.h"
 #import "Three20/TTDebugFlags.h"
 
@@ -84,7 +85,7 @@ static const NSInteger kLoadMaxRetries = 2;
     // http://tools.ietf.org/html/rfc2397
     NSArray * dataSplit = [[URL resourceSpecifier] componentsSeparatedByString:@","];
     if([dataSplit count]!=2) {
-        TTLOG(@"UNRECOGNIZED data: URL %@", self.URL);
+        TTDPRINT(@"UNRECOGNIZED data: URL %@", self.urlPath);
         return;
     }
     if([[dataSplit objectAtIndex:0] rangeOfString:@"base64"].location != NSNotFound) {
