@@ -1,7 +1,7 @@
 
 #import "ActivityTestController.h"
 #import <Three20/Three20.h>
-#import <Three20/UIViewAdditions.h>
+#import <Three20UI/UIViewAdditions.h>
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -10,8 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // private
 
-- (id)init {
-  if (self = [super init]) {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     self.title = @"Activity Labels";
   }
   return self;

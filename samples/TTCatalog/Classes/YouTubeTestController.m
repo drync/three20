@@ -1,13 +1,13 @@
 #import "YouTubeTestController.h"
-#import <Three20/UIViewAdditions.h>
+#import <Three20UI/UIViewAdditions.h>
 
 @implementation YouTubeTestController
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // NSObject
 
-- (id)init {
-  if (self = [super init]) {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     youTubeView = nil;
   }
   return self;
