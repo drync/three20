@@ -42,6 +42,12 @@
  */
 - (void)from:(NSString*)URL toObject:(id)object;
 - (void)from:(NSString*)URL toObject:(id)object selector:(SEL)selector;
+/**
+  Specifies the navigation mode to use. If TTNavigationModeCreate, TTNavigationModeShared are used, then 
+  if this URL is referenced from a table - ie TTTableLinkedItem or one of it's subclasses - a disclosure 
+  button will be added. 
+*/
+- (void)from:(NSString*)URL toObject:(id)target selector:(SEL)selector mode: (TTNavigationMode) mode;
 
 /**
  * Adds a URL pattern which will create and present a view controller when loaded.
