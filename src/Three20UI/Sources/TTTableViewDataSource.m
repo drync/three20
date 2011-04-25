@@ -255,7 +255,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (Class)tableView:(UITableView*)tableView cellClassForObject:(id)object {
   if ([object respondsToSelector:@selector(cellClass)])
-    return [object cellClass];
+    return [object performSelector:@selector(cellClass)];
   else if(_itemCellClassMapping && [_itemCellClassMapping objectForKey:NSStringFromClass([object class])]) {
     return NSClassFromString([_itemCellClassMapping objectForKey:NSStringFromClass([object class])]);
   }
