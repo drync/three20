@@ -20,8 +20,8 @@
 		665A56D71265240E0032D0BE /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 665A56D61265240E0032D0BE /* BasicTests.m */; };
 		665A56D81265240E0032D0BE /* BasicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 665A56D61265240E0032D0BE /* BasicTests.m */; };
 		66FC2D881265211F00F56B19 /* Xcode324iOS41TestSuiteWorkaround.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FC2D871265211F00F56B19 /* Xcode324iOS41TestSuiteWorkaround.m */; };
-		6E6454741184D2CD00F08CB1 /* Three20.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E6454731184D2CD00F08CB1 /* Three20.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E6454931184D3ED00F08CB1 /* Three20+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E6454921184D3ED00F08CB1 /* Three20+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E6454741184D2CD00F08CB1 /* Three20.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E6454731184D2CD00F08CB1 /* Three20.h */; settings = {ATTRIBUTES = (); }; };
+		6E6454931184D3ED00F08CB1 /* Three20+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E6454921184D3ED00F08CB1 /* Three20+Additions.h */; settings = {ATTRIBUTES = (); }; };
 		6E6454AA1184D43100F08CB1 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6454A71184D42800F08CB1 /* libThree20Style.a */; };
 		6E7F96FB118E363500443B46 /* Three20.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7F96FA118E363500443B46 /* Three20.m */; };
 		6EDAEA1D118CA5E20008133C /* libThree20UICommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDAEA09118CA5B50008133C /* libThree20UICommon.a */; };
