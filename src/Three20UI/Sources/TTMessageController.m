@@ -534,7 +534,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString*)subject {
+    
   self.view;
+    
   for (int i = 0; i < _fields.count; ++i) {
     id field = [_fields objectAtIndex:i];
     if ([field isKindOfClass:[TTMessageSubjectField class]]) {
