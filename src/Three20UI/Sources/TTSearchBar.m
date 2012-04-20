@@ -322,7 +322,10 @@ static const CGFloat kIndexViewMargin = 4.0f;
 
     if (_showsSearchIcon) {
       UIImageView* iconView = [[[UIImageView alloc] initWithImage:
-        [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/Three20.bundle/images/searchIcon.png"]]] autorelease];
+                                [UIImage imageWithContentsOfFile:
+                                 [[[NSBundle mainBundle] bundlePath] 
+                                  stringByAppendingString:@"/Three20.bundle/images/searchIcon.png"]]] 
+                               autorelease];
       [iconView sizeToFit];
       iconView.contentMode = UIViewContentModeLeft;
       iconView.frame = CGRectInset(iconView.frame, -floor(kMarginX/2), 0);

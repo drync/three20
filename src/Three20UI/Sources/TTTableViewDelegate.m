@@ -97,30 +97,34 @@ static const NSUInteger kFirstTableSection = 0;
  */
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
   TTView * header = (TTView*)[self tableView:tableView viewForHeaderInSection:section];
-  if(header) {
+  if (header) {
     //! Is it a bug in -TTView sizeThatFits: that it ignores the size argument? -- sia 20110226
     // return [header sizeThatFits:CGSizeMake(320,[tableView sectionHeaderHeight])].height;
     TTStyleContext* context = [[[TTStyleContext alloc] init] autorelease];
     context.delegate = header;
     context.font = nil;
-    CGSize size = [header.style addToSize:CGSizeMake(0, [tableView sectionHeaderHeight]) context:context];
+    CGSize size = [header.style addToSize:CGSizeMake(0, [tableView sectionHeaderHeight]) 
+                                  context:context];
     return size.height;
-  } else {
+  } 
+  else {
     CGFloat height = [tableView sectionHeaderHeight];
-    //! For some reason, [tableView sectionHeaderHeight] returns (clearly wrong) 10 for grouped tables. Bug?  Work around -- sic 20110227
-    if([tableView style] == UITableViewStyleGrouped) {
+    //! For some reason, [tableView sectionHeaderHeight] returns (clearly wrong) 10 
+    //for grouped tables. Bug?  Work around -- sic 20110227
+    if ([tableView style] == UITableViewStyleGrouped) {
       height = 36;
     }
     return height;
   }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
   if ([tableView.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)]) {
     NSString* title = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
     if (title.length > 0) {
       TTView* header = [_headers objectForKey:title];
-      if(header) {
+      if (header) {
         return header;
       }
 
@@ -130,7 +134,8 @@ static const NSUInteger kFirstTableSection = 0;
 
       if (tableView.style == UITableViewStylePlain && TTSTYLEVAR(tableHeaderTintColor)) {
         header = [[[TTTableHeaderView alloc] initWithTitle:title] autorelease];
-      } else if (tableView.style == UITableViewStyleGrouped && TTSTYLEVAR(tableHeaderGrouped)) {
+      } 
+      else if (tableView.style == UITableViewStyleGrouped && TTSTYLEVAR(tableHeaderGrouped)) {
         TTLabel * label = [[[TTLabel alloc] initWithText:title] autorelease];
         label.style = TTSTYLE(tableHeaderGrouped);
         label.backgroundColor = [UIColor clearColor];
@@ -138,7 +143,7 @@ static const NSUInteger kFirstTableSection = 0;
         [_headers setObject:header forKey:[NSNumber numberWithInteger:section]];
       }
 
-      if(header) {
+      if (header) {
         [_headers setObject:header forKey:title];
         return header;
       }
@@ -160,14 +165,15 @@ static const NSUInteger kFirstTableSection = 0;
     TTTableLinkedItem* item = object;
     if (item.URL && [_controller shouldOpenURL:item.URL]) {
       TTOpenURLFromView(item.URL, tableView);
-
-    } else if (item.delegate && item.selector) {
+    } 
+    else if (item.delegate && item.selector) {
       [item.delegate performSelector:item.selector withObject:object];
     }
 
     if ([object isKindOfClass:[TTTableButton class]]) {
       [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    } else if ([object isKindOfClass:[TTTableMoreButton class]]) {
+    } 
+    else if ([object isKindOfClass:[TTTableMoreButton class]]) {
       TTTableMoreButton* moreLink = (TTTableMoreButton*)object;
       moreLink.isLoading = YES;
       TTTableMoreButtonCell* cell
@@ -177,7 +183,8 @@ static const NSUInteger kFirstTableSection = 0;
 
       if (moreLink.model) {
         [moreLink.model load:TTURLRequestCachePolicyDefault more:YES];
-      } else {
+      } 
+      else {
         [_controller.model load:TTURLRequestCachePolicyDefault more:YES];
       }
     }

@@ -197,8 +197,9 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)from:(NSString*)URL toObject:(id)target selector:(SEL)selector mode: (TTNavigationMode) mode {
-  TTURLNavigatorPattern* pattern = [[TTURLNavigatorPattern alloc] initWithTarget:target mode: mode];
+- (void)from:(NSString*)URL toObject:(id)target selector:(SEL)selector mode: 
+(TTNavigationMode) mode {TTURLNavigatorPattern* pattern = 
+    [[TTURLNavigatorPattern alloc] initWithTarget:target mode: mode];
   pattern.selector = selector;
   [self addObjectPattern:pattern forURL:URL];
   [pattern release];
